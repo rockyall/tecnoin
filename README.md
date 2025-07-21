@@ -85,7 +85,7 @@ setx MYSQL_PASSWORD "TuPasswordSegura"
 export MYSQL_PASSWORD="TuPasswordSegura"
 ```
 
-### 1. ASP.NET Web (Clientes)
+### 1. ASP.NET MVC (Clientes)
 ```bash
 cd prueba1
 dotnet build
