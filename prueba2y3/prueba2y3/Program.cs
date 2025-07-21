@@ -2,39 +2,39 @@ using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Enable Kestrel on all IPs (so Nginx can connect)
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(5020); // Don't use ListenLocalhost when behind a reverse proxy
+});
+
+// Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(options =>
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
 {
-    options.AddPolicy("AllowAll",
-        policy => policy.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader());
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
 });
-
 
 var app = builder.Build();
-app.UseForwardedHeaders(new ForwardedHeadersOptions
-{
-    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-});
 
-// Configure the HTTP request pipeline.
+app.UseForwardedHeaders();
+
+// Enable Swagger (optional for dev/testing)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
-app.UseRouting(); // Required for Razor Pages and fallback routing
-app.UseCors("AllowAll");
+app.UseRouting();
 
 app.UseAuthorization();
 
