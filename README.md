@@ -87,14 +87,14 @@ export MYSQL_PASSWORD="TuPasswordSegura"
 
 ### 1. ASP.NET Web (Clientes)
 ```bash
-cd ClientesApp
+cd prueba1
 dotnet build
 dotnet run
 ```
 
 ### 2. API REST (Productos)
 ```bash
-cd ProductosApi
+cd prueba2y3
 dotnet build
 dotnet run
 ```
