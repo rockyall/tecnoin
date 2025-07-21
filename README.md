@@ -102,10 +102,6 @@ dotnet run
 ### 3. Frontend VueJS (integrado Razor)
 Este frontend está integrado directamente en la vista Razor de ASP.NET. Al ejecutar el proyecto de Razor Pages, ya podrás ver la interfaz Vue funcionando:
 
-```bash
-cd ProductosFrontendRazor
-dotnet run
-```
 
 Luego abre el navegador en:  
 📍 `http://localhost:5000/Productos`
