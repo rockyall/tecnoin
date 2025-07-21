@@ -2,12 +2,6 @@ using Microsoft.AspNetCore.HttpOverrides;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Enable Kestrel on all IPs (so Nginx can connect)
-builder.WebHost.ConfigureKestrel(options =>
-{
-    options.ListenLocalhost(5020);
-});
-
 // Add services to the container
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();

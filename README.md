@@ -1,3 +1,12 @@
+## 🚀 Demo
+
+Puedes probar las aplicaciones desplegadas en los siguientes enlaces:
+
+- 🌐 [Aplicación MVC - prueba1.ricardoall.dev](https://prueba1.ricardoall.dev)
+- 📡 [API REST - prueba2y3.ricardoall.dev](https://prueba2y3.ricardoall.dev/api)
+
+---
+
 # Tecnoin - Pruebas Técnicas .NET & Web
 
 Este repositorio contiene tres proyectos desarrollados como parte de una evaluación técnica. Cada uno demuestra el uso de tecnologías específicas del stack Microsoft y del desarrollo web moderno, abordando distintos escenarios:
