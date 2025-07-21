@@ -1,0 +1,44 @@
+@model ClienteViewModel
+
+@{
+    ViewData["title"] = "Borrar cliente";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0">Confirmar Eliminación</h5>
+                </div>
+                <div class="card-body">
+
+                    @if (ViewData["DeletionMessageResponse"] == null)
+                    {
+                        <p class="mb-4 fs-5">¿Está seguro de que desea eliminar este cliente?</p>
+
+                        @using (Html.BeginForm("DeleteConfirmed", "Cliente", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(model => model.Id)
+
+                            <div class="d-flex justify-content-between">
+                                <a href="@Url.Action("Index", "Cliente")" class="btn btn-outline-secondary">
+                                    <i class="bi bi-arrow-left"></i> Cancelar
+                                </a>
+                                <input type="submit" value="Eliminar Cliente" class="btn btn-danger" />
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="alert alert-success d-flex justify-content-between align-items-center">
+                            <span class="me-3">@ViewData["DeletionMessageResponse"]</span>
+                            @Html.ActionLink("Ver Listado", "Index", "Cliente", null, new { @class = "btn btn-sm btn-outline-success" })
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
