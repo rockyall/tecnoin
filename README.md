@@ -68,68 +68,22 @@ Aplicación frontend desarrollada en VueJS, integrada dentro de una Razor Page p
   - El precio debe ser mayor que cero.
 - Botones de acción dentro de la tabla para editar o eliminar productos.
 
-### 🧩 Estructura principal (Vue embebido en Razor)
-```html
-<!-- Productos.cshtml -->
-<div id="app">
-  <table>
-    <tr v-for="producto in productos" :key="producto.id">
-      <td>{{ producto.nombre }}</td>
-      <td>{{ producto.precio }}</td>
-      <td>
-        <button @click="editarProducto(producto)">Editar</button>
-        <button @click="eliminarProducto(producto.id)">Eliminar</button>
-      </td>
-    </tr>
-  </table>
-
-  <form @submit.prevent="guardarProducto">
-    <input v-model="form.nombre" placeholder="Nombre" required />
-    <input v-model.number="form.precio" type="number" min="0.01" required />
-    <button type="submit">Guardar</button>
-  </form>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-<script>
-  new Vue({
-    el: '#app',
-    data: {
-      productos: [],
-      form: {
-        id: null,
-        nombre: '',
-        precio: 0
-      }
-    },
-    methods: {
-      async obtenerProductos() {
-        const res = await fetch('/api/productos');
-        this.productos = await res.json();
-      },
-      async guardarProducto() {
-        // POST o PUT según sea nuevo o edición
-      },
-      async eliminarProducto(id) {
-        await fetch(`/api/productos/${id}`, { method: 'DELETE' });
-        this.obtenerProductos();
-      },
-      editarProducto(prod) {
-        this.form = Object.assign({}, prod);
-      }
-    },
-    mounted() {
-      this.obtenerProductos();
-    }
-  });
-</script>
-```
-
----
-
 ## 🛠️ Cómo ejecutar cada proyecto
 
 Asegúrate de tener instalados **.NET SDK** y **Node.js** (solo si usas herramientas externas para compilar VueJS, aunque en este caso se usó Vue desde CDN).
+
+
+### 🔒 Seguridad de la base de datos
+
+> Por seguridad, la contraseña de la base de datos **no debe ser escrita directamente en el código fuente**. En su lugar, se debe configurar una **variable de entorno** llamada `MYSQL_PASSWORD`, la cual será utilizada por el proyecto ASP.NET para establecer la conexión con la base de datos.
+
+```cmd:
+setx MYSQL_PASSWORD "TuPasswordSegura"
+```
+
+```bash:
+export MYSQL_PASSWORD="TuPasswordSegura"
+```
 
 ### 1. ASP.NET Web (Clientes)
 ```bash
@@ -160,8 +114,8 @@ Luego abre el navegador en:
 
 ## 📷 Capturas de pantalla
 
-<img src="imagenes/api-response.png" width="600" />
-<img src="imagenes/vue-ui.png" width="600" />
+<img src="prueba2y3.png" width="600" />
+<img src="prueba3.png" width="600" />
 
 ---
 
@@ -176,5 +130,5 @@ Luego abre el navegador en:
 
 ## ✍ Autor
 
-**Ricardo Ochoa Hernández**  
+**Ricardo All Ochoa Hernandez**  
 [@rockyall](https://github.com/rockyall)
