@@ -3,7 +3,7 @@
 Puedes probar las aplicaciones desplegadas en los siguientes enlaces:
 
 - 🌐 [Aplicación MVC - prueba1.ricardoall.dev](https://prueba1.ricardoall.dev)
-- 📡 [API REST - prueba2y3.ricardoall.dev](https://prueba2y3.ricardoall.dev/api)
+- 📡 [API REST - prueba2y3.ricardoall.dev](https://prueba2y3.ricardoall.dev)
 
 ---
 
