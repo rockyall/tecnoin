@@ -1,4 +1,3 @@
-
 # Tecnoin - Pruebas Técnicas .NET & Web
 
 Este repositorio contiene tres proyectos desarrollados como parte de una evaluación técnica. Cada uno demuestra el uso de tecnologías específicas del stack Microsoft y del desarrollo web moderno, abordando distintos escenarios:
@@ -15,7 +14,7 @@ Una aplicación web desarrollada en ASP.NET MVC que permite gestionar registros 
 - Eliminar clientes por su Id.
 - Mostrar mensajes de éxito o error.
 
-### Requisitos Técnicos Cumplidos:
+### ✅ Requisitos Técnicos Cumplidos:
 - [x] Conexión por ADO.NET o ODBC.
 - [x] Separación de lógica de datos en clase independiente.
 - [x] Validaciones básicas antes de insertar.
@@ -23,11 +22,8 @@ Una aplicación web desarrollada en ASP.NET MVC que permite gestionar registros 
 - [x] Manejo de mensajes para el usuario.
 - [x] Creación de tabla `Clientes`.
 
-### 🖼️ Captura de pantalla (agregar imagen aquí)
-```html
-<!-- Inserta una imagen de la vista principal aquí -->
+### 🖼️ Captura de pantalla
 <img src="imagenes/clientes-app.png" alt="Vista Clientes" width="600" />
-```
 
 ---
 
@@ -35,7 +31,7 @@ Una aplicación web desarrollada en ASP.NET MVC que permite gestionar registros 
 
 Una API RESTful construida con ASP.NET Core para gestionar productos a través de un conjunto completo de operaciones CRUD.
 
-### Endpoints implementados:
+### 🧪 Endpoints implementados:
 - `GET /api/productos` → Lista todos los productos.
 - `GET /api/productos/{id}` → Devuelve un producto por su Id.
 - `POST /api/productos` → Agrega un nuevo producto.
@@ -56,35 +52,80 @@ public class Producto
 
 ---
 
-## 📌 3. Prueba Técnica – Aplicación Angular (Consumo de API REST)
+## 📌 3. Prueba Técnica – Aplicación VueJS integrada en Razor Page
 
-Aplicación frontend desarrollada en Angular (o tecnología alternativa) que permite consumir la API de productos y realizar operaciones visuales CRUD.
+Aplicación frontend desarrollada en VueJS, integrada dentro de una Razor Page para consumir la API de productos y realizar operaciones visuales CRUD.
 
 ### Funcionalidades:
-- Listado de productos en una tabla.
+- Listado de productos en una tabla HTML.
 - Agregar, editar y eliminar productos.
 - Formulario con validaciones:
   - El nombre no debe estar vacío.
   - El precio debe ser mayor que cero.
-- Botones para editar o eliminar productos directamente desde la tabla.
+- Botones de acción dentro de la tabla para editar o eliminar productos.
 
-### 🧩 Componentes clave:
-```ts
-// producto.model.ts
-export interface Producto {
-  id: number;
-  nombre: string;
-  descripcion: string;
-  precio: number;
-  cantidadEnStock: number;
-}
+### 🧩 Estructura principal (Vue embebido en Razor)
+```html
+<!-- Productos.cshtml -->
+<div id="app">
+  <table>
+    <tr v-for="producto in productos" :key="producto.id">
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.precio }}</td>
+      <td>
+        <button @click="editarProducto(producto)">Editar</button>
+        <button @click="eliminarProducto(producto.id)">Eliminar</button>
+      </td>
+    </tr>
+  </table>
+
+  <form @submit.prevent="guardarProducto">
+    <input v-model="form.nombre" placeholder="Nombre" required />
+    <input v-model.number="form.precio" type="number" min="0.01" required />
+    <button type="submit">Guardar</button>
+  </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      productos: [],
+      form: {
+        id: null,
+        nombre: '',
+        precio: 0
+      }
+    },
+    methods: {
+      async obtenerProductos() {
+        const res = await fetch('/api/productos');
+        this.productos = await res.json();
+      },
+      async guardarProducto() {
+        // POST o PUT según sea nuevo o edición
+      },
+      async eliminarProducto(id) {
+        await fetch(`/api/productos/${id}`, { method: 'DELETE' });
+        this.obtenerProductos();
+      },
+      editarProducto(prod) {
+        this.form = Object.assign({}, prod);
+      }
+    },
+    mounted() {
+      this.obtenerProductos();
+    }
+  });
+</script>
 ```
 
 ---
 
 ## 🛠️ Cómo ejecutar cada proyecto
 
-> Asegúrate de tener instalados .NET SDK, Node.js, y Angular CLI en caso de usar Angular.
+Asegúrate de tener instalados **.NET SDK** y **Node.js** (solo si usas herramientas externas para compilar VueJS, aunque en este caso se usó Vue desde CDN).
 
 ### 1. ASP.NET Web (Clientes)
 ```bash
@@ -100,34 +141,36 @@ dotnet build
 dotnet run
 ```
 
-### 3. Angular Frontend
+### 3. Frontend VueJS (integrado Razor)
+Este frontend está integrado directamente en la vista Razor de ASP.NET. Al ejecutar el proyecto de Razor Pages, ya podrás ver la interfaz Vue funcionando:
+
 ```bash
-cd ProductosFrontend
-npm install
-ng serve
+cd ProductosFrontendRazor
+dotnet run
 ```
+
+Luego abre el navegador en:  
+📍 `http://localhost:5000/Productos`
 
 ---
 
 ## 📷 Capturas de pantalla
-Agrega aquí capturas representativas del CRUD en web y del cliente Angular:
 
-```html
 <img src="imagenes/api-response.png" width="600" />
-<img src="imagenes/angular-ui.png" width="600" />
-```
+<img src="imagenes/vue-ui.png" width="600" />
 
 ---
 
 ## 🔗 Requisitos
-- .NET Core SDK
-- Visual Studio / VS Code
-- MySQL o SQL Server
-- Node.js & Angular CLI (para frontend)
+
+- .NET Core SDK  
+- Visual Studio o VS Code  
+- MySQL o SQL Server  
+- Node.js (opcional para herramientas de build JS)
 
 ---
 
 ## ✍ Autor
 
 **Ricardo Ochoa Hernández**  
-[rockyall](https://github.com/rockyall)
+[@rockyall](https://github.com/rockyall)
