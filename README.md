@@ -23,7 +23,7 @@ Una aplicación web desarrollada en ASP.NET MVC que permite gestionar registros 
 - [x] Creación de tabla `Clientes`.
 
 ### 🖼️ Captura de pantalla
-<img src="imagenes/clientes-app.png" alt="Vista Clientes" width="600" />
+<img src="prueba1_borrado.png" alt="Vista Clientes" width="600" />
 
 ---
 
