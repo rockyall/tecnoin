@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "/Volumes/ramssd/zricardoall/tecnoin/prueba2y3/prueba2y3/wwwroot/vue/assets/AboutView-CHzE7lzc.js",
+      "PackagePath": "staticwebassets/vue/assets/AboutView-CHzE7lzc.js"
+    },
+    {
+      "Id": "/Volumes/ramssd/zricardoall/tecnoin/prueba2y3/prueba2y3/wwwroot/vue/assets/AboutView-CSIvawM9.css",
+      "PackagePath": "staticwebassets/vue/assets/AboutView-CSIvawM9.css"
+    },
+    {
+      "Id": "/Volumes/ramssd/zricardoall/tecnoin/prueba2y3/prueba2y3/wwwroot/vue/assets/index-CTLkComb.css",
+      "PackagePath": "staticwebassets/vue/assets/index-CTLkComb.css"
+    },
+    {
+      "Id": "/Volumes/ramssd/zricardoall/tecnoin/prueba2y3/prueba2y3/wwwroot/vue/assets/index-NfWzrHe4.js",
+      "PackagePath": "staticwebassets/vue/assets/index-NfWzrHe4.js"
+    },
+    {
+      "Id": "/Volumes/ramssd/zricardoall/tecnoin/prueba2y3/prueba2y3/wwwroot/vue/favicon.ico",
+      "PackagePath": "staticwebassets/vue/favicon.ico"
+    },
+    {
+      "Id": "/Volumes/ramssd/zricardoall/tecnoin/prueba2y3/prueba2y3/wwwroot/vue/index.html",
+      "PackagePath": "staticwebassets/vue/index.html"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.prueba2y3.props",
+      "PackagePath": "build\\prueba2y3.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.prueba2y3.props",
+      "PackagePath": "buildMultiTargeting\\prueba2y3.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.prueba2y3.props",
+      "PackagePath": "buildTransitive\\prueba2y3.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.prueba2y3.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

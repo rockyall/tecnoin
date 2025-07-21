@@ -12,15 +12,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="337501a5-d0bd-4a7b-8b9f-fbaf8c8239b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/prueba1/Controllers/ClienteController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prueba1/Models/ClienteViewModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prueba1/Services/DALService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prueba1/Views/Cliente/Create.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prueba1/Views/Cliente/Delete.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prueba1/Views/Cliente/Edit.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prueba1/Views/Cliente/Index.cshtml" afterDir="false" />
-    </list>
+    <list default="true" id="337501a5-d0bd-4a7b-8b9f-fbaf8c8239b6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -180,8 +172,17 @@
       <workItem from="1752909986360" duration="119000" />
       <workItem from="1752910115473" duration="16740000" />
       <workItem from="1752968737992" duration="49562000" />
-      <workItem from="1753087225196" duration="11061000" />
+      <workItem from="1753087225196" duration="11400000" />
     </task>
+    <task id="LOCAL-00001" summary="First exercise for prueba1 created">
+      <option name="closed" value="true" />
+      <created>1753119748008</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1753119748008</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +192,8 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="First exercise for prueba1 created" />
+    <option name="LAST_COMMIT_MESSAGE" value="First exercise for prueba1 created" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
